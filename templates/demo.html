@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- old -->
+	<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+	<!-- JQuery -->
+	<script src="../static/js/jquery-2.1.4.min.js"></script>
+	<!-- Bootstrap -->
+	<!-- <link rel="stylesheet" href="static/bootstrap.min.css"> -->
+	<!-- <link rel="stylesheet" href="static/bootstrap-theme.min.css"> -->
+	<!-- <script src="static/bootstrap.min.js"></script> -->
+	<!-- Brat -->
+	<link rel="stylesheet" type="text/css" href="../static/css/style-vis.css">
+	<script type="text/javascript" src="../static/js/head.load.min.js"></script>
+	<!-- d3 -->
+	<script type="text/javascript" src="../static/js/d3.min.js"></script>
+	<script type="text/javascript" src="../static/js/dagre-d3.min.js"></script>
+	<!-- CoreNLP -->
+	<link rel="stylesheet" type="text/css" href="../static/css/corenlp-brat.css">
+	<script type="text/javascript" src="../static/js/chinese_bart_brat.js"></script>
+
+	<!-- others -->
+	<script type="text/javascript" src="../static/js/jquery.svg.min.js"></script>
+	<script type="text/javascript" src="../static/js/jquery.svgdom.min.js"></script>
+	<script type="text/javascript" src="../static/js/configuration.js"></script>
+	<script type="text/javascript" src="../static/js/util.js"></script>
+	<script type="text/javascript" src="../static/js/annotation_log.js"></script>
+	<script type="text/javascript" src="../static/js/webfont.js"></script>
+	<script type="text/javascript" src="../static/js/dispatcher.js"></script>
+	<script type="text/javascript" src="../static/js/url_monitor.js"></script>
+	<script type="text/javascript" src="../static/js/visualizer.js"></script>
+
+
+    <title>ChineseBart_Demo</title>
+    <link rel="stylesheet" href="../static/css/demo.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.js"></script>
+    <script src="https://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jqueryui/1.10.4/jquery-ui.js"></script>
+</head>
+
+
+<body>
+
+    <header>
+        <h1>汉语依存句法增强</h1>
+    </header>
+
+    <content>
+        <h3>输入你的句子：</h3>
+
+        <form>
+            <input type="text" value="" autocomplete="off" name="query" id="search" placeholder="例：美存在于愿望的实现之时。"/>
+            <button type="submit" id="submit_b">Submit</button>
+        </form>
+
+        <h3>或者</h3>
+
+        <form>
+            <select id="example">
+                <option value="">选择已有示例</option>
+                <option value="美存在于愿望的实现之时。">介词加强</option>
+                <option value="上海浦东及时地制定和推出法规性文件。">词间连词</option>
+                <option value="我和妈妈正在做饭。">并列主语：传播主语</option>
+                <option value="汕头市还制定和出台了十多项规章。">并列谓语：传播主语</option>
+                <option value="上海浦东及时地制定和推出法规性文件。">并列谓语：传播宾语</option>
+                <option value="目前，开发区内楼房林立、商贾云集，一座投资六千万元的多功能现代化商城――金三角新庄的建设已近尾声。">并列谓语：传播状语</option>
+                <option value="上海浦东积极、及时地制定和推出法规性文件。">并列修饰语：传播中心语</option>
+                <option value="大量出现的是以前不曾遇到过的新情况、新问题。">并列中心语：传播修饰词</option>
+                <option value="西藏金融体制改革坚持与全国框架一致、体制衔接的方针。">并列动词短语：传播介宾结构作状语</option>
+                <option value="下午和晚上我们都在排练。">传播时间、地点、范围状语</option>
+                <option value="国务院副总理邹家华参加了今天举行的投产剪彩仪式。">同位语</option>
+                <option value="中外合资合作的建筑企业近二千家。">复合词：动词复合词</option>
+                <option value="上海浦东近年来颁布实行了涉及经济、贸易、科技、文教等领域的七十一件法规性文件，确保了浦东开发的有序进行。">复合词：名词复合词</option>
+                <option value="香港渔船被菲律宾和日本扣留。">被动句</option>
+                <option value="崇明具有悠久的历史。">amod形容词修饰词和主谓间的转换</option>
+                <option value="目前在中国境内承包工程的国外承包商已有一百三十七家。">acl转化</option>
+                <option value="老师通知我开会。">兼语句</option>
+                <option value="吃完饭后，他去散步了。">状语从句</option>
+                <option value="其规模居全国第二位，仅次于四川。">复句</option>
+                <option value="中国目前有两千多万糖尿病患者，仅次于美国。">省略主语</option>
+                <option value="张三看见了小明，李四也看见了。">省略宾语</option>
+                <option value="外商来华投资。">连动句</option>
+
+            </select>
+
+        </form>
+
+        <h3 id="base">基本句法依存</h3>
+
+        <div id="annotations" style="width:1200px;">
+        </div>
+
+        <h3 id="enhance">增强句法依存</h3>
+
+        <div id="annotations_un" style="width:1200px;">
+        </div>
+
+    </content>
+
+</body>
+</html>

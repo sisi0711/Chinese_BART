@@ -1,0 +1,11 @@
+# test:eud_conj_info-blackbox1
+# purpose: test cc's added to conj
+1       I       _       PRP     PRP     _       2       nsubj   _       _
+2       love    _       VBP     VBP     _       0       root    _       _
+3       you     _       PRP     PRP     _       2       dobj    _       _
+4       but     _       CC      CC      _       3       cc      _       _
+5       also    _       RB      RB      _       6       advmod  _       _
+6       her     _       PRP     PRP     _       3       conj    _       _
+7       but     _       CC      CC      _       3       cc      _       _
+8       not     _       RB      RB      _       9       neg     _       _
+9       myself  _       PRP     PRP     _       3       conj    _       _
