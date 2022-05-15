@@ -1,4 +1,4 @@
-from chinese_bart.api import convert_bart_conllu
+from WED.api import convert_bart_conllu
 
 # read a CoNLL-U formatted file
 with open('UD_data/UD.conll','r', encoding = "utf-8") as f:
